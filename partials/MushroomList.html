@@ -1,0 +1,15 @@
+<article class="product-list">
+
+  <header><h1>List of 'Shrooms</h1></header>
+
+  <input type="text" ng-model="filterValue" placeholder="Search" />
+  <div><input type="radio" ng-model="query" name="edible" value="true">Show Edible<input type="radio" ng-model="query" name="edible" value="false">Show Poisonous</div>
+  <section>
+
+    <div ng-repeat="item in mushrooms | filter: filterValue | filter: {edible:query}">
+      <p>{{ item.name }}-{{item.description}}</p>
+    </div>
+
+  </section>
+
+</article>
